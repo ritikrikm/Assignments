@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+Contact Search Feature
+Overview
+This project is a Contact Search Feature built with React. It allows users to search, filter, and sort through a list of contacts using multiple criteria, such as name, date of birth, email, address, city, state, and more. It also includes pagination and a dynamic contact details section to display information about the selected contact.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Search Filters:
 
-## Available Scripts
+Search contacts by First Name, Last Name, DOB, Email, Phone, Address, City, State, and Zip Code.
+Real-time search filtering updates the contact list dynamically.
+Sorting:
 
-In the project directory, you can run:
+Sort contacts by Name, Date of Birth (DOB), or City in ascending or descending order.
+Pagination:
 
-### `npm start`
+Handles large datasets with pagination controls (Previous/Next buttons).
+Contact Selection:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Displays detailed information about the selected contact below the table.
+Shows a fallback message ("No contact selected") when no contact is selected.
+Responsive UI:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Built using Material-UI to ensure the interface works seamlessly across devices.
+How It Works
+Search:
 
-### `npm test`
+Enter a value in any of the search fields and see the table dynamically update with matching contacts.
+If no matches are found, a message ("No contacts found.") is displayed.
+Sort:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Click on the column headers (Name, DOB, City) to sort the data.
+Arrows (↑ / ↓) indicate the current sorting direction.
+Pagination:
 
-### `npm run build`
+Navigate through the contact list using the Previous/Next buttons.
+Pagination buttons are disabled when there are no results or when you reach the beginning/end.
+Contact Details:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Select a contact using the radio button in the table to view their details below the table.
+If no contact is selected, a message ("No contact selected.") is displayed.
+Technologies Used
+Frontend: React.js, Material-UI
+Styling: CSS-in-JS (via Material-UI)
+State Management: React useState
+Data: Static JSON file (mock data)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#Ritik Mehta 
