@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SearchForm from "./components/SearchForm";
+import ContactTable from "./components/ContactTable";
+import ContactDetails from "./components/ContactDetails";
+import contactsData from "./data/contacts.json";
 
-function App() {
+const App = () => {
+  const [filteredContacts, setFilteredContacts] = useState(contactsData);
+  const [selectedContact, setSelectedContact] = useState(null);
+
+  const handleSearch = (filters) => {
+    const filtered = contactsData.filter((contact) =>
+      Object.keys(filters).every((key) =>
+        filters[key]
+          ? String(contact[key] || "")
+              .toLowerCase()
+              .includes(filters[key].toLowerCase())
+          : true
+      )
+    );
+
+    // Clear selected contact if no results are found
+    if (filtered.length === 0) {
+      setSelectedContact(null);
+    }
+
+    setFilteredContacts(filtered);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="app">
+      <h1>Contact Search Feature</h1>
+      <SearchForm onSearch={handleSearch} />
+      <ContactTable
+        contacts={filteredContacts}
+        onSelect={setSelectedContact}
+      />
+      {filteredContacts.length === 0 ? (
+        <p style={{ textAlign: "center", fontStyle: "italic", marginTop: "20px" }}>
+          No contacts found.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      ) : selectedContact ? (
+        <ContactDetails contact={selectedContact} />
+      ) : (
+        <p style={{ textAlign: "center", fontStyle: "italic", marginTop: "20px" }}>
+          No contact selected.
+        </p>
+      )}
     </div>
   );
-}
+};
 
 export default App;
